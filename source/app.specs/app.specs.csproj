@@ -119,6 +119,7 @@
     <Compile Include="ChainBuilderProviderSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="EnumerableExtensionsSpecs.cs" />
     <Compile Include="UrlBuilderSpecs.cs" />
     <Compile Include="CreateStartupStepsSpecs.cs" />
     <Compile Include="DependencyFactoriesProviderSpecs.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="StartupPipelineProviderSpecs.cs" />
     <Compile Include="StartupSpecs.cs" />
     <Compile Include="TypeMatcherFactorySpecs.cs" />
+    <Compile Include="UrlInclusionSpecs.cs" />
     <Compile Include="UrlSpecs.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />

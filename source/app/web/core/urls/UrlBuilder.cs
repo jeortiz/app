@@ -1,10 +1,51 @@
-﻿namespace app.web.core.urls
+﻿using System;
+using app.utility.extensions;
+
+namespace app.web.core.urls
 {
-  public class UrlBuilder : IUrlBuilder
+  public class UrlBuilder : IUrlBuilder,IConfigureAUrl
   {
-    public string build<T>()
+    public IStoreTokens token_store;
+    public IFormatUrls url_formatter;
+    public ICreateInclusionConfigurators inclusion_factory;
+
+    public UrlBuilder(IStoreTokens token_store, IFormatUrls url_formatter, ICreateInclusionConfigurators inclusion_factory)
     {
-      throw new System.NotImplementedException();
+      this.token_store = token_store;
+      this.url_formatter = url_formatter;
+      this.inclusion_factory = inclusion_factory;
+    }
+
+    public IConfigureAUrl to_run<RequestType>()
+    {
+      return or<RequestType>(true);
+    }
+
+    public IConfigureAUrl include<ItemToInclude>(ItemToInclude item, Action<ISpecifyInclusionDetails<ItemToInclude>> configuration)
+    {
+      configuration(inclusion_factory.create_inclusion_for(item,token_store));
+      return new_builder();
+    }
+
+    void store_request_of<RequestType>()
+    {
+      token_store.store_token(UrlTokens.request, typeof(RequestType));
+    }
+
+    IConfigureAUrl new_builder()
+    {
+      return new UrlBuilder(token_store, url_formatter,inclusion_factory);
+    }
+
+    public IConfigureAUrl or<Request>(bool condition)
+    {
+      if (condition) store_request_of<Request>();
+      return new_builder(); 
+    }
+
+    public override string ToString()
+    {
+      return token_store.all_tokens().get_result_of_visiting_all_items_with(url_formatter);
     }
   }
 }

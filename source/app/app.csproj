@@ -121,6 +121,9 @@
     <Compile Include="utility\containers\basic\ItemCreationExceptionFactory.cs" />
     <Compile Include="utility\containers\basic\MissingDependencyFactory.cs" />
     <Compile Include="utility\containers\core\IPickTheCtorOnTheType.cs" />
+    <Compile Include="utility\extensions\EnumerableExtensions.cs" />
+    <Compile Include="utility\extensions\IProcessAndItemAndReturnState.cs" />
+    <Compile Include="utility\extensions\IProcessAnItem.cs" />
     <Compile Include="utility\IRunABehaviour.cs" />
     <Compile Include="utility\logger\core\CallingTypeResolver.cs" />
     <Compile Include="utility\logger\core\ICreateLoggers.cs" />
@@ -173,9 +176,18 @@
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubRequestMatchBuilder.cs" />
+    <Compile Include="web\core\urls\IConfigureAUrl.cs" />
+    <Compile Include="web\core\urls\ICreateInclusionConfigurators.cs" />
+    <Compile Include="web\core\urls\IMapAPropertyNameFromAnExpression.cs" />
+    <Compile Include="web\core\urls\IFormatUrls.cs" />
+    <Compile Include="web\core\urls\IRepresentAToken.cs" />
+    <Compile Include="web\core\urls\ISpecifyInclusionDetails.cs" />
+    <Compile Include="web\core\urls\IStoreTokens.cs" />
     <Compile Include="web\core\urls\IUrlBuilder.cs" />
     <Compile Include="web\core\urls\Url.cs" />
     <Compile Include="web\core\urls\UrlBuilder.cs" />
+    <Compile Include="web\core\urls\UrlInclusion.cs" />
+    <Compile Include="web\core\urls\UrlTokens.cs" />
     <Compile Include="web\core\ViewAReportModel.cs" />
   </ItemGroup>
   <ItemGroup>

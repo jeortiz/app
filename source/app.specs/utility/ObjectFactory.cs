@@ -24,6 +24,11 @@ namespace app.specs.utility
         {
           return ctor.Body.downcast_to<NewExpression>().Constructor;
         }
+
+        public string property_name_of<PropertyType>(Expression<Func<ItemToTarget, PropertyType>> accessor)
+        {
+          return accessor.Body.downcast_to<MemberExpression>().Member.Name;
+        }
       }
     }
 

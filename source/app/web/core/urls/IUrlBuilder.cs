@@ -2,6 +2,6 @@ namespace app.web.core.urls
 {
   public interface IUrlBuilder
   {
-    string build<T>();
+    IConfigureAUrl to_run<RequestType>(); 
   }
 }
