@@ -5,9 +5,9 @@ namespace app.web.core.urls
 {
   public class UrlInclusion<ItemToInclude> : ISpecifyInclusionDetails<ItemToInclude>
   {
-    ItemToInclude item;
-    IStoreTokens token_store;
-    IMapAPropertyNameFromAnExpression name_mapper;
+    public ItemToInclude item;
+    public IStoreTokens token_store;
+    public IMapAPropertyNameFromAnExpression name_mapper;
 
     public UrlInclusion(ItemToInclude item, IStoreTokens token_store, IMapAPropertyNameFromAnExpression name_mapper)
     {
