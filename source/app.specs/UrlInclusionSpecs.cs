@@ -22,7 +22,7 @@ namespace app.specs
       {
         token_store = depends.on<IStoreTokens>();
         property_name_mapper = depends.on<IMapAPropertyNameFromAnExpression>();
-        property_name = ObjectFactory.expressions.to_target<ItemToInclude>().property_name_of(x => x.value);
+        property_name = "sdfsdf";
         item = new ItemToInclude {value = 42};
         depends.on(item);
         expression = x => x.value;

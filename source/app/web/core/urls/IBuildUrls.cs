@@ -1,7 +1,7 @@
 namespace app.web.core.urls
 {
-  public interface IBuildUrls
+  public interface IBuildUrls : IConfigureAUrl
   {
-    IConfigureAUrl to_run<RequestType>(); 
+    IConfigureAUrl run<RequestType>(); 
   }
 }

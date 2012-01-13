@@ -26,7 +26,7 @@ namespace app.specs
     public class when_a_request_is_specified : concern
     {
       Because b = () =>
-        result = sut.to_run<StubRequest>();
+        result = sut.run<StubRequest>();
 
       It should_store_the_request_token_in_the_token_store = () =>
         token_store.received(x => x.store_token(UrlTokens.request, typeof(StubRequest)));
@@ -95,7 +95,10 @@ namespace app.specs
       public class and_the_condition_is_not_met
       {
         Because b = () =>
+        {
           result = sut.or<SecondRequest>(false);
+        };
+          
 
         It should_add_the_request_to_the_token_store = () =>
           token_store.never_received(x => x.store_token(UrlTokens.request, typeof(SecondRequest)));
@@ -125,9 +128,6 @@ namespace app.specs
           x.ShouldEqual(inclusion_details);
         }
           );
-
-      It should_add_the_request_to_the_token_store = () =>
-        token_store.never_received(x => x.store_token(UrlTokens.request, typeof(SecondRequest)));
 
       It should_return_a_new_builder_to_keep_configuring = () =>
         result.ShouldBeAn<UrlBuilder>().ShouldNotEqual(sut);

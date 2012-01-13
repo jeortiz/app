@@ -3,7 +3,7 @@ using app.utility.extensions;
 
 namespace app.web.core.urls
 {
-  public class UrlBuilder : IBuildUrls,IConfigureAUrl
+  public class UrlBuilder : IBuildUrls
   {
     public IStoreTokens token_store;
     public IFormatUrls url_formatter;
@@ -16,7 +16,7 @@ namespace app.web.core.urls
       this.inclusion_factory = inclusion_factory;
     }
 
-    public IConfigureAUrl to_run<RequestType>()
+    public IConfigureAUrl run<RequestType>()
     {
       return or<RequestType>(true);
     }
