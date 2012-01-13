@@ -180,6 +180,7 @@
     <Compile Include="web\core\urls\ICreateInclusionConfigurators.cs" />
     <Compile Include="web\core\urls\IMapAPropertyNameFromAnExpression.cs" />
     <Compile Include="web\core\urls\IFormatUrls.cs" />
+    <Compile Include="web\core\urls\InclusionConfigurationsFactory.cs" />
     <Compile Include="web\core\urls\IRepresentAToken.cs" />
     <Compile Include="web\core\urls\ISpecifyInclusionDetails.cs" />
     <Compile Include="web\core\urls\IStoreTokens.cs" />
