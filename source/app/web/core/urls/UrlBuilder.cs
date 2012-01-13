@@ -24,23 +24,17 @@ namespace app.web.core.urls
     public IConfigureAUrl include<ItemToInclude>(ItemToInclude item, Action<ISpecifyInclusionDetails<ItemToInclude>> configuration)
     {
       configuration(inclusion_factory.create_inclusion_for(item,token_store));
-      return new_builder();
+      return this;
     }
 
     void store_request_of<RequestType>()
     {
       token_store.store_token(UrlTokens.request, typeof(RequestType));
     }
-
-    IConfigureAUrl new_builder()
-    {
-      return new UrlBuilder(token_store, url_formatter,inclusion_factory);
-    }
-
     public IConfigureAUrl or<Request>(bool condition)
     {
       if (condition) store_request_of<Request>();
-      return new_builder(); 
+      return this;
     }
 
     public override string ToString()

@@ -32,13 +32,7 @@ namespace app.specs
         token_store.received(x => x.store_token(UrlTokens.request, typeof(StubRequest)));
 
       It should_return_an_item_to_continue_configuring_the_url = () =>
-      {
-        var item = result.ShouldBeAn<UrlBuilder>();
-        item.ShouldNotEqual(sut);
-        item.token_store.Equals(token_store).ShouldBeTrue();
-        item.url_formatter.ShouldNotBeNull();
-        item.inclusion_factory.ShouldNotBeNull();
-      };
+        result.ShouldEqual(sut);
 
       static IConfigureAUrl result;
     }
@@ -88,23 +82,20 @@ namespace app.specs
         It should_add_the_request_to_the_token_store = () =>
           token_store.received(x => x.store_token(UrlTokens.request, typeof(SecondRequest)));
 
-        It should_return_a_new_builder_to_keep_configuring = () =>
-          result.ShouldBeAn<UrlBuilder>().ShouldNotEqual(sut);
+        It should_return_the_builder_to_keep_configuring = () =>
+          result.ShouldEqual(sut);
       }
 
       public class and_the_condition_is_not_met
       {
         Because b = () =>
-        {
           result = sut.or<SecondRequest>(false);
-        };
           
-
         It should_add_the_request_to_the_token_store = () =>
           token_store.never_received(x => x.store_token(UrlTokens.request, typeof(SecondRequest)));
 
-        It should_return_a_new_builder_to_keep_configuring = () =>
-          result.ShouldBeAn<UrlBuilder>().ShouldNotEqual(sut);
+        It should_return_the_builder_to_keep_configuring = () =>
+          result.ShouldEqual(sut);
       }
 
       static IConfigureAUrl result;
@@ -129,8 +120,8 @@ namespace app.specs
         }
           );
 
-      It should_return_a_new_builder_to_keep_configuring = () =>
-        result.ShouldBeAn<UrlBuilder>().ShouldNotEqual(sut);
+      It should_return_the_builder_to_keep_configuring = () =>
+        result.ShouldEqual(sut);
 
       static TheItemToInclude some_item;
       static IConfigureAUrl result;
