@@ -3,7 +3,7 @@ using app.utility.extensions;
 
 namespace app.web.core.urls
 {
-  public class UrlBuilder : IUrlBuilder,IConfigureAUrl
+  public class UrlBuilder : IBuildUrls,IConfigureAUrl
   {
     public IStoreTokens token_store;
     public IFormatUrls url_formatter;

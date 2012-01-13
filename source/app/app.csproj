@@ -183,7 +183,7 @@
     <Compile Include="web\core\urls\IRepresentAToken.cs" />
     <Compile Include="web\core\urls\ISpecifyInclusionDetails.cs" />
     <Compile Include="web\core\urls\IStoreTokens.cs" />
-    <Compile Include="web\core\urls\IUrlBuilder.cs" />
+    <Compile Include="web\core\urls\IBuildUrls.cs" />
     <Compile Include="web\core\urls\Url.cs" />
     <Compile Include="web\core\urls\UrlBuilder.cs" />
     <Compile Include="web\core\urls\UrlInclusion.cs" />

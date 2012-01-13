@@ -18,7 +18,7 @@ namespace app.specs
       {
         using (var scaffold = ObjectFactory.container.scaffold(spec, fake))
         {
-          url_builder = scaffold.an<IUrlBuilder>();
+          build_urls = scaffold.an<IBuildUrls>();
         }
       };
 
@@ -26,10 +26,10 @@ namespace app.specs
         result = Url.to;
 
       It should_return_the_correct_url_builder = () => 
-        result.ShouldEqual(url_builder);
+        result.ShouldEqual(build_urls);
 
-      static IUrlBuilder url_builder;
-      static IUrlBuilder result;
+      static IBuildUrls build_urls;
+      static IBuildUrls result;
     }
   }
 }

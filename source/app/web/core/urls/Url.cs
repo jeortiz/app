@@ -4,12 +4,12 @@ namespace app.web.core.urls
 {
   public class Url
   {
-    public static IUrlBuilder to
+    public static IBuildUrls to
     {
       get
       {
         {
-          return Container.fetch.an<IUrlBuilder>();
+          return Container.fetch.an<IBuildUrls>();
         }
       }
     }

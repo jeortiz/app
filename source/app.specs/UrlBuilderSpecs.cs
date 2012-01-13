@@ -10,7 +10,7 @@ namespace app.specs
   [Subject(typeof(UrlBuilder))]
   public class UrlBuilderSpecs
   {
-    public abstract class concern : Observes<IUrlBuilder,
+    public abstract class concern : Observes<IBuildUrls,
                                       UrlBuilder>
     {
       Establish c = () =>
