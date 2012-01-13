@@ -120,6 +120,7 @@
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="EnumerableExtensionsSpecs.cs" />
+    <Compile Include="InclusionConfigurationFactorySpecs.cs" />
     <Compile Include="UrlBuilderSpecs.cs" />
     <Compile Include="CreateStartupStepsSpecs.cs" />
     <Compile Include="DependencyFactoriesProviderSpecs.cs" />
